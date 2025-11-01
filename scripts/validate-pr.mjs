@@ -8,9 +8,12 @@ const REQUIRE_INDEX_HTML = true;
 const LIMIT_ONE_PNG = true;
 const LIMIT_ONE_CSS = true;
 
+// 收集錯誤訊息，而非立即退出
+const errors = [];
+
 function fail(msg) {
   console.error(`❌ ${msg}`);
-  process.exit(1);
+  errors.push(msg);
 }
 function ok(msg) {
   console.log(`✅ ${msg}`);
@@ -31,13 +34,20 @@ const isDate = (s) => {
 
 const token = process.env.GITHUB_TOKEN;
 const eventPath = process.env.GITHUB_EVENT_PATH;
-if (!token) fail('Missing GITHUB_TOKEN');
-if (!eventPath) fail('Missing GITHUB_EVENT_PATH');
+if (!token) {
+  console.error('❌ Missing GITHUB_TOKEN');
+  process.exit(1);
+}
+if (!eventPath) {
+  console.error('❌ Missing GITHUB_EVENT_PATH');
+  process.exit(1);
+}
 
 const event = JSON.parse(readFileSync(eventPath, 'utf8'));
 const pr = event.pull_request;
 if (!pr?.number || !pr?.base?.repo?.full_name || !pr?.head?.repo?.full_name) {
-  fail('Cannot read pull_request info (base/head repo).');
+  console.error('❌ Cannot read pull_request info (base/head repo).');
+  process.exit(1);
 }
 
 const [baseOwner, baseRepo] = pr.base.repo.full_name.split('/');
@@ -56,7 +66,8 @@ async function gh(path, { ownerRepo = `${baseOwner}/${baseRepo}`, method = 'GET'
   });
   if (!res.ok) {
     const text = await res.text();
-    fail(`GitHub API error (${res.status} ${res.statusText}): ${url}\n${text}`);
+    console.error(`❌ GitHub API error (${res.status} ${res.statusText}): ${url}\n${text}`);
+    throw new Error(`GitHub API error: ${res.status}`);
   }
   return res.json();
 }
@@ -174,5 +185,115 @@ async function gh(path, { ownerRepo = `${baseOwner}/${baseRepo}`, method = 'GET'
     }
   }
 
-  ok(`檢核通過：僅新增資料夾 ${folder}，命名正確、檔案合規且皆 ≤ 100 KB 🎉`);
+  // 8) 判斷檢核結果
+  const hasErrors = errors.length > 0;
+
+  if (!hasErrors) {
+    ok(`檢核通過：僅新增資料夾 ${folder}，命名正確、檔案合規且皆 ≤ 100 KB 🎉`);
+  }
+
+  // 9) 在 PR 上留言顯示檢核結果（無論成功或失敗）
+  await postPRComment({
+    folder,
+    fileCount: files.length,
+    datePart,
+    romanPart,
+    pngCount,
+    cssCount,
+    hasIndex,
+    errors: hasErrors ? errors : null
+  });
+
+  // 10) 根據結果決定 exit code
+  if (hasErrors) {
+    console.error(`\n❌ 檢核失敗，共 ${errors.length} 個錯誤`);
+    process.exit(1);
+  }
 })();
+
+async function postPRComment({ folder, fileCount, datePart, romanPart, pngCount, cssCount, hasIndex, errors }) {
+  // 只在 PR 事件時留言
+  if (process.env.GITHUB_EVENT_NAME !== 'pull_request') {
+    console.log('ℹ️  非 PR 環境，跳過留言');
+    return;
+  }
+
+  const prNumber = pr?.number;
+  if (!prNumber) {
+    console.log('⚠️  無法取得 PR 編號，跳過留言');
+    return;
+  }
+
+  // 建立留言內容
+  const lines = [];
+
+  if (errors) {
+    // 失敗情境的留言
+    lines.push('## ❌ 簽到檢核失敗');
+    lines.push('');
+    lines.push('### 🚨 錯誤清單');
+    lines.push('');
+    errors.forEach((error, index) => {
+      lines.push(`${index + 1}. ❌ ${error}`);
+    });
+    lines.push('');
+    lines.push('### 📋 檢核詳情');
+    lines.push('');
+    lines.push('| 項目 | 結果 |');
+    lines.push('|------|------|');
+    if (folder) {
+      lines.push(`| 資料夾名稱 | \`${folder}\` |`);
+    }
+    if (datePart) {
+      lines.push(`| 日期格式 | ${datePart} ${isDate(datePart) ? '✅' : '❌'} |`);
+    }
+    if (romanPart) {
+      lines.push(`| 羅馬拼音 | ${romanPart} ${isLowerRomanized(romanPart) ? '✅' : '❌'} |`);
+    }
+    lines.push(`| 檔案數量 | ${fileCount} 個 |`);
+    lines.push(`| index.html | ${hasIndex ? '✅ 存在' : '❌ 缺少'} |`);
+    lines.push(`| PNG 圖片 | ${pngCount} 個 ${pngCount <= 1 ? '✅' : '❌'} |`);
+    lines.push(`| CSS 檔案 | ${cssCount} 個 ${cssCount <= 1 ? '✅' : '❌'} |`);
+    lines.push('');
+    lines.push('### 💡 解決方法');
+    lines.push('');
+    lines.push('請根據上方錯誤訊息修正後，重新推送到此分支。');
+    lines.push('修正後 CI 會自動重新檢查。');
+    lines.push('');
+    lines.push('如有疑問，請參考 [README.md](../blob/main/README.md) 的常見問題部分。');
+  } else {
+    // 成功情境的留言
+    lines.push('## ✅ 簽到檢核通過！');
+    lines.push('');
+    lines.push('### 📋 檢核結果');
+    lines.push('');
+    lines.push('| 項目 | 結果 |');
+    lines.push('|------|------|');
+    lines.push(`| 資料夾名稱 | \`${folder}\` |`);
+    lines.push(`| 日期格式 | ${datePart} ✅ |`);
+    lines.push(`| 羅馬拼音 | ${romanPart} ✅ |`);
+    lines.push(`| 檔案數量 | ${fileCount} 個 |`);
+    lines.push(`| index.html | ${hasIndex ? '✅ 存在' : '❌ 缺少'} |`);
+    lines.push(`| PNG 圖片 | ${pngCount} 個 ✅ |`);
+    lines.push(`| CSS 檔案 | ${cssCount} 個 ✅ |`);
+    lines.push(`| 檔案大小 | 全部 ≤ 100 KB ✅ |`);
+  }
+
+  lines.push('');
+  lines.push('---');
+  lines.push('*🤖 自動檢核 by 六角學院 Vibe Coding Camp*');
+
+  const commentBody = lines.join('\n');
+
+  try {
+    await gh(`/issues/${prNumber}/comments`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ body: commentBody })
+    });
+    console.log(`✅ 已在 PR #${prNumber} 留言`);
+  } catch (err) {
+    console.error('❌ 留言失敗:', err.message);
+    console.error('提示：請確認 GITHUB_TOKEN 權限包含 pull-requests: write');
+  }
+}

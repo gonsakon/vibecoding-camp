@@ -5,13 +5,12 @@ on:
     types: [opened, synchronize, reopened]
     branches: [main]
 
-permissions:
-  contents: read
-  pull-requests: read
-
 jobs:
   validate:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - name: Checkout (shallow)
         uses: actions/checkout@v4
@@ -26,5 +25,6 @@ jobs:
       - name: Validate PR (only one new students folder, size limit)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
           GITHUB_EVENT_PATH: ${{ github.event_path }}
         run: node scripts/validate-pr.mjs

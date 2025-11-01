@@ -1,0 +1,11 @@
+{
+  "name": "vibecoding-camp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check:all": "node scripts/validate-pr.mjs"
+  },
+  "dependencies": {
+  }
+}
