@@ -213,7 +213,8 @@ async function gh(path, { ownerRepo = `${baseOwner}/${baseRepo}`, method = 'GET'
 
 async function postPRComment({ folder, fileCount, datePart, romanPart, pngCount, cssCount, hasIndex, errors }) {
   // 只在 PR 事件時留言
-  if (process.env.GITHUB_EVENT_NAME !== 'pull_request') {
+  const eventName = process.env.GITHUB_EVENT_NAME;
+  if (eventName !== 'pull_request' && eventName !== 'pull_request_target') {
     console.log('ℹ️  非 PR 環境，跳過留言');
     return;
   }
