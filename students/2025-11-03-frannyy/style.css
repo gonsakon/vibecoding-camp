@@ -1,0 +1,9 @@
+h1{
+    font-size: medium;
+    color: darkblue;
+}
+
+.image img{
+    width: 300px;
+    height: auto;
+}
