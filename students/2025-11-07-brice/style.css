@@ -1,0 +1,20 @@
+body{
+    margin-left: 180px;
+    margin-right: 180px;
+}
+h1{
+    background-color: sienna;
+    text-align: center;
+    border-left: 6px solid rgb(78, 34, 14);
+    color: white;
+    border-radius: 12px;
+}
+
+.poem{
+    padding: 24px;
+    text-align: center;
+    background-color: blanchedalmond;
+    border-left: 6px solid sienna;
+    border-bottom: 2px solid sienna;
+    border-radius: 24px;
+}
