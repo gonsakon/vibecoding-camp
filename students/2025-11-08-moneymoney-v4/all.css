@@ -1,0 +1,24 @@
+.bg-color{
+    background-color: #fbd8a4;
+}
+.container{
+    width: 800px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.text-center{
+    text-align: center;
+}
+img{
+    display: block;
+}
+.title{
+    color: #51250c;
+    font-size: 48px;
+    line-height: 1;
+}
+.textContent{
+    color: #864621;
+    font-size: 28px;
+    line-height: 0.5;
+}
