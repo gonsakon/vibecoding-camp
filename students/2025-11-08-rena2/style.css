@@ -1,0 +1,10 @@
+h1{
+    color: grey;
+    font-family: Verdana;
+    border-bottom: 1px solid pink; 
+}
+
+p{
+    color: blue;
+    font-size: 18px;
+}
