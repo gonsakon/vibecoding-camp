@@ -1,0 +1,11 @@
+.title{
+  color: navy;
+}
+
+.title-name{
+  font-style: italic;
+}
+
+.img-fluid{
+  max-width: 100%;
+}

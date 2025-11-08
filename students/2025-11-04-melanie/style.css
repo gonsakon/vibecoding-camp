@@ -1,0 +1,12 @@
+.box{
+    width: 500px;
+    border: 1px solid;
+    padding: 10px;
+    margin: 0 auto;
+}
+h1{
+    color: blue;
+}
+p{
+    color: orange;
+}

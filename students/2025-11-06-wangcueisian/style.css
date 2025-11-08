@@ -1,0 +1,7 @@
+h1 {
+  color: pink;
+}
+h1:hover {
+  font-size: 50px;
+  color: aquamarine;
+}

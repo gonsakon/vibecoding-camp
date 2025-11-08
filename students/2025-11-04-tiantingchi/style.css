@@ -1,0 +1,97 @@
+/* 超級簡單的樣式，想要更活潑可以自行調整 */
+:root{
+  --bg:#f7f7f8;
+  --card:#ffffff;
+  --text:#111827;
+  --muted:#6b7280;
+  --accent:#2563eb;
+  --border:#e5e7eb;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+  background: var(--bg);
+  color: var(--text);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 24px;
+}
+
+.card{
+  width: 100%;
+  max-width: 560px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  text-align:center;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+.avatar{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--border);
+  display:block;
+  margin: 0 auto 12px;
+  background:#ddd;
+}
+
+h1{
+  margin: 8px 0 4px;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.subtitle{
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+
+.bio{
+  margin: 0 auto 18px;
+  line-height: 1.7;
+}
+
+.links{
+  list-style:none;
+  padding:0;
+  margin: 0;
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap: wrap;
+}
+
+.links a{
+  display:inline-block;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  text-decoration:none;
+  color: var(--text);
+  transition: transform .08s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.links a:hover{
+  transform: translateY(-1px);
+  border-color: var(--accent);
+  color: var(--accent);
+  background: #eef2ff;
+}
+
+footer{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 12px;
+  text-align:center;
+  color: var(--muted);
+  pointer-events:none;
+}
