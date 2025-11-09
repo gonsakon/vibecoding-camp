@@ -1,0 +1,21 @@
+h1 {
+    color: #b04747;
+    text-align: center;
+}
+.box {
+  width: 600px;
+  padding: 30px;
+  border: 4px solid #000;
+  position: relative;   /* 讓偽元素能絕對定位 */
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  top: -15px;     /* 調整位移 */
+  left: 15px;
+  width: 100%;
+  height: 100%;
+  border: 4px solid #000;
+  box-sizing: border-box;
+}
