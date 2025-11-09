@@ -1,0 +1,18 @@
+.frame{
+    width: fit-content;
+    border-radius: 10px;
+    border: 5px solid hsl(45, 80%, 80%);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+h1{
+    font-family: 'Noto Serif Hong Kong', serif;
+    color:hsl(25, 30%, 40%);
+}
+
+img{
+    width: 200px;
+}
