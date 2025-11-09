@@ -1,0 +1,24 @@
+html, body {
+  background-image: linear-gradient(to right top, #ffc0a1, #ff9c9a, #ff78ac, #d964d1, #7a69f8);
+  color: #fff;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+.avatar-img {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+}
