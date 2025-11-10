@@ -1,0 +1,22 @@
+h1{
+    font-size: 30px;
+    color: black;
+}
+
+h1:hover{
+    font-size: 50px;
+    color: red;
+}
+
+a{
+    color: black;
+}
+
+a:hover{
+    font-size: 30px;
+    color: blue;
+}
+
+img:hover{
+    transform: rotateY(180deg);
+}

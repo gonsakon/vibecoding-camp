@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>我的個人介紹</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main class="card">
+    <img src="people.png" alt="個人照片" class="avatar" />
+    <h1>田婷琦</h1>
+    <p class="subtitle">PHP網站工程師</p>
+    <p class="bio">
+        嗨！平常除了工作之外，我也玩CrossFit，有興趣的可以一起玩！
+    </p>
+    <ul class="links">
+        <li><a href="mailto:tianchi915@gmail.com">Email</a></li>
+        <li><a href="https://github.com/ccyy915" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+</main>
+<footer>
+    <small>© <span id="year"></span> Ting-Chi,Tian</small>
+</footer>
+<script>
+    // 自動顯示今年年份
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
