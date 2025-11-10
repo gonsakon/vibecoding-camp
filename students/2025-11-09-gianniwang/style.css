@@ -1,0 +1,32 @@
+h1{
+  color:blue;
+  font-size:48px;
+  font-family:Arial;
+}
+h2{
+  font-family:Arial;
+  border-left:3px solid red;
+  border-bottom:3px solid red;
+}
+p{
+  font-size:16px;
+  text-indent:32px;
+}
+a{
+  color:red
+}
+a:hover{
+    color:blue;
+}
+a:active{
+    color:red;
+}
+img{
+  border:3px solid grey;
+  padding: 20px;
+  width:180px;
+  height:auto;
+}
+.style1{
+    text-decoration: line-through;
+}
