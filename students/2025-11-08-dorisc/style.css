@@ -1,0 +1,11 @@
+h1{
+    color: blue;
+}
+
+img{
+    border: 3px solid grey;
+}
+
+img:hover{
+    border: 3px solid purple;
+}

@@ -1,0 +1,16 @@
+h1{
+    color:darkolivegreen;
+}
+p{
+    color:darkgoldenrod;
+    font-size: 20px;
+    font-weight: bold;
+    text-indent: 2em;
+}
+
+p:hover{
+    color:darkgoldenrod;
+    font-size: 25px;
+    font-weight: bold;
+    text-indent: 3em;
+}
