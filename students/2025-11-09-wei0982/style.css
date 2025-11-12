@@ -1,0 +1,24 @@
+h1{
+  color: blue;
+}
+a{
+  color: red;
+}
+h2{
+  border-left: 7px solid red;
+  border-bottom: 7px solid red;
+}
+h2:hover{
+  border-left: 7px solid orange;
+  border-bottom: 7px solid green;
+}
+img{
+  border: 12px solid grey;
+  max-width: 95%;
+}
+img:hover{
+  border: 12px solid pink;
+}
+.line-through{
+  text-decoration: line-through;
+}
