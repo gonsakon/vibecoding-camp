@@ -1,0 +1,22 @@
+html,
+body {
+  height: 100%;
+  background-color: #f0f8ff;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.5;
+}
+
+.title {
+  text-align: center;
+  color: #333;
+  margin-top: 50px;
+}
+
+.content {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
