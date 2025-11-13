@@ -1,0 +1,11 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    color: blueviolet;
+    font-size: 50px;
+    font-weight: bold;
+}
