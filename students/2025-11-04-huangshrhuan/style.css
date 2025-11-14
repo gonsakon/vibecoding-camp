@@ -1,0 +1,11 @@
+body {
+  background: #f0f0f0;
+}
+h1 {
+  color: blue;
+}
+.picture {
+  width: 200px;
+  height: auto;
+  border-radius: 999px
+}
