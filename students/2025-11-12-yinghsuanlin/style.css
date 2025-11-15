@@ -1,0 +1,19 @@
+h1 {
+  color: rgb(142, 216, 45);
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  margin-top: 50px;
+}
+
+p {
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+  border-top: 1px solid coral;
+  padding-top: 16px;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
