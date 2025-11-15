@@ -1,0 +1,17 @@
+h1{
+    color: Grey;
+    font-size: 40px;
+    font-family: verdana;
+    text-indent: 400px;
+}
+P{
+  font-size: 24pt;
+
+img{
+   object-position: lefttop;
+   object-fit: contain;
+   border-radius: 50%;
+}
+img:hover{
+   border: 5px solid red;
+   }
