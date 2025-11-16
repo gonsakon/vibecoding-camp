@@ -1,0 +1,27 @@
+*{
+    line-height: 1.6;
+    letter-spacing: 1.1px;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+}
+
+img{
+    width: 300px;
+    height: auto;
+}
+
+.hint{
+    font-size: 12px;
+    color: #666;
+    line-height: 1;
+    margin: .5em 0;
+}

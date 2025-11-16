@@ -1,0 +1,16 @@
+* {
+ /* outline: 1px solid red; */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 20%;
+}
+
+img {
+  max-width: 300px;
+}
