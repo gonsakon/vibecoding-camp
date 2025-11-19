@@ -1,0 +1,17 @@
+
+        /* 確保字體使用 Inter 或類似的無襯線字體，並為中文提供備用 */
+        body {
+            font-family: 'Inter', 'Noto Sans TC', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f7f9fb; /* 輕微的背景色 */
+        }
+        /* 自定義顏色配置 */
+        .primary-color {
+            color: #1e40af; /* 深藍色 */
+        }
+        .primary-bg {
+            background-color: #3b82f6; /* 亮藍色 */
+        }
+        .primary-border {
+            border-color: #3b82f6;
+        }
+ 

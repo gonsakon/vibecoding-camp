@@ -1,0 +1,14 @@
+::selection {
+  background-color: #dfe9e4;
+}
+
+.hello {
+  color: #264f38;
+}
+
+.avatar {
+  display: block;
+  width: 320px;
+  aspect-ratio: 1 / 1;
+  background-color: #cccccc;
+}

@@ -1,0 +1,44 @@
+.share-tech-regular {
+    font-family: "Share Tech", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.center-center {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-pink {
+    color: pink;
+}
+
+.text-orange {
+    color: #ff9e1f;
+}
+
+.text-grey {
+    color: grey;
+}
+
+@keyframes leftRight {
+    0% {
+        transform: translateX(-100px);
+    }
+
+    50% {
+        transform: translateX(100px);
+    }
+
+    100% {
+        transform: translateX(-100px);
+    }
+}
+
+.moving-text {
+    display: inline-block;
+    animation: leftRight 5s ease-in-out infinite;
+}
