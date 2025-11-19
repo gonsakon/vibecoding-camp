@@ -1,0 +1,14 @@
+body {
+  font-family: system-ui, "Noto Sans TC", sans-serif;
+  margin: 2rem;
+  line-height: 1.6;
+  background: #f8f8f8;
+}
+
+h1 {
+  color: #c4554d;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
