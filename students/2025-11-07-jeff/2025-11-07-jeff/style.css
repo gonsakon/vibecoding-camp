@@ -1,0 +1,17 @@
+/* 修改 H1 樣式 */
+h1 {
+    color: #2a6df4;        /* 字體顏色 */
+    font-size: 36px;       /* 字體大小 */
+    font-weight: bold;     /* 粗體 */
+    text-align: center;    /* 置中 */
+    margin-bottom: 20px;   /* 與下面元素的間距 */
+}
+
+/* 修改 P 樣式 */
+p {
+    color: #444444;        /* 深灰字體 */
+    font-size: 18px;       /* 字體大小 */
+    line-height: 1.8;      /* 行高 */
+    text-indent: 32px;     /* 首行縮排 */
+    margin: 10px 40px;     /* 外距 */
+}
