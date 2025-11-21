@@ -1,0 +1,13 @@
+h1{
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    color:blue;
+}
+
+img{
+    width: 325px;
+    height:130px;
+    object-fit: cover; /* 填滿容器，多餘部分裁切 */
+    object-position: center; /* 圖片置中顯示 */
+    overflow: hidden; /* 隱藏被裁切的部分 */     
+}
