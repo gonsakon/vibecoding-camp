@@ -1,0 +1,23 @@
+body {
+    background: linear-gradient(135deg, #0f0f23, #1a1a2e);
+    color: #00ff41;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.greeting {
+    text-align: center;
+    border: 2px solid #00ff41;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(0, 255, 65, 0.1);
+}
+
+h1 {
+    color: #ff0040;
+    text-shadow: 0 0 10px #ff0040;
+}
