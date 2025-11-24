@@ -1,0 +1,143 @@
+header {
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333333;
+}
+
+/* Smaller image class for the Gemini figure */
+.small-figure-gemini {
+  width: 350px; /* adjust to desired smaller size */
+  max-width: 100%;
+  height: auto; /* preserve aspect ratio */
+  display: block;
+  margin: 1em auto; /* center horizontally */
+}
+
+/* Page-wide base styles and container for readable line length */
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background: #f6f7f8;
+  color: #222;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+main {
+  margin-top: 1.25rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  padding: 1.25rem;
+}
+
+/* Responsive navigation styles */
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+.site-nav .brand {
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+  font-size: 1.125rem;
+}
+
+/* hide native checkbox */
+.nav-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav-toggle-label {
+  display: inline-block;
+  width: 36px;
+  height: 28px;
+  cursor: pointer;
+}
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: #111827;
+  height: 3px;
+  border-radius: 2px;
+  position: relative;
+}
+.nav-toggle-label span {
+  top: 12px;
+}
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.nav-toggle-label span::before { top: -8px; }
+.nav-toggle-label span::after { top: 8px; }
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none; /* hidden on small screens until toggled */
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.nav-links li a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  color: #111827;
+  text-decoration: none;
+  border-radius: 6px;
+}
+.nav-links li a:hover,
+.nav-links li a:focus {
+  background: rgba(17,24,39,0.05);
+}
+
+/* When checkbox is checked, show the nav on small screens */
+.nav-toggle:checked ~ .nav-links {
+  display: flex;
+}
+
+/* Desktop layout */
+@media (min-width: 700px) {
+  .nav-toggle-label { display: none; }
+  .nav-toggle { display: none; }
+  .nav-links {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+  .nav-links li a { padding: 0.4rem 0.6rem; }
+}
+
+@media (max-width: 600px) {
+  .small-figure-gemini {
+    width: 80%;
+  }
+  main {
+    padding: 0.9rem;
+  }
+}
