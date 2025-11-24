@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cath | Front-end Developer & UI Designer</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header & Nav -->
+  <header class="header">
+    <div class="container">
+      <a href="#" class="logo"></a>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact" class="btn-primary">聯絡我</a></li>
+        </ul>
+        <button class="hamburger" aria-label="開啟選單">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h1>你好，我是 Cath!<br><span class="highlight">Front-end Developer</span><br>& UI Designer</h1>
+        <p>熱愛把設計稿變成像素完美的互動網站，用乾淨的程式碼打造流暢使用者體驗。</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn-primary">查看作品</a>
+          <a href="#contact" class="btn-secondary">聯絡我</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="image-wrapper">
+          <img src="Geeko3.png" alt="Cath">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title">關於我</h2>
+      <div class="about-content">
+        <p>我是 Cath，目前專注於前端開發與 UI 設計。擅長使用 <strong>React</strong>、<strong>Vue</strong> 打造高效能的單頁應用，也熱衷於 RWD 與細膩的交交互動細節。</p>
+        <p>我相信好的網站不只是好看，更要好用、好快、好維護。每一行程式碼都力求乾淨、可讀，讓團隊合作更順暢。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2 class="section-title">服務項目</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Landing Page 設計與開發</h3>
+          <p>從設計到上線，一條龍打造高轉換率的行銷頁面</p>
+        </div>
+        <div class="service-card">
+          <h3>網站切版與前端開發</h3>
+          <p>像素完美還原設計稿，兼顧效能與可維護性</p>
+        </div>
+        <div class="service-card">
+          <h3>UI / UX 設計</h3>
+          <p>使用者導向的介面設計，讓產品更好用、更美觀</p>
+        </div>
+        <div class="service-card">
+          <h3>React / Vue 專案開發</h3>
+          <p>現代化前端框架建置 SPA，支援複雜互動功能</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2 class="section-title">作品展示</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-img" style="background:#715BFE;"></div>
+          <h3>E-Commerce Dashboard</h3>
+          <p>React + TypeScript 打造的後台管理系統</p>
+        </article>
+        <article class="project-card">
+          <div class="project-img" style="background:#FBA0FF;"></div>
+          <h3>SaaS Landing Page</h3>
+          <p>高轉換率的產品落地頁，支援多語言</p>
+        </article>
+        <article class="project-card">
+          <div class="project-img" style="background:#9CD622;"></div>
+          <h3>個人品牌網站</h3>
+          <p>Vue 3 + GSAP 動畫的藝術家作品集</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact-card">
+        <h2>準備好一起打造下一個精彩專案了嗎？</h2>
+        <p>不管是切版、開發、還是完整的網站專案，都歡迎隨時找我聊聊！</p>
+        <a href="mailto:cathryn.workroom@gmail.com" class="btn-primary large">立即聯絡我</a>
+        <p class="email">📮 cathryn.workroom@gmail.com</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Cath. All rights reserved.</p>
+      <p>Made with ❤️ and lots of coffee</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
