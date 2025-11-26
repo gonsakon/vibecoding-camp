@@ -68,7 +68,7 @@ body {
 }
 
 .avatar:hover {
-    content: url("500.webp");
+    content: url("https://i.meee.com.tw/n9YhGyR.webp");
     object-fit: cover;
     transform: scale(1.05);
     border-color: var(--secondary-color);
