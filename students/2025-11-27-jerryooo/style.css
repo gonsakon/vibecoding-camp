@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 20px;
+    padding: 20px;
+    background-color: purple;
+}
+
+h1{
+    color: blue;
+    font-size: 36px;
+    text-align: center;
+}
+
+p{
+    font-size: 18px;
+    color: white;
+    line-height: 1.6;
+    text-align: center;
+}
+
+img{
+    display: block;
+    margin: 0 auto;
+    border: 3px solie gray;
+}
+imp:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+    border: 3px solie yellow;
+}
