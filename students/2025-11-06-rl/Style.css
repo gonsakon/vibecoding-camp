@@ -1,0 +1,52 @@
+h1{
+  color:blue;
+  font-size: 30px;
+  
+}
+
+h2{
+  font-size: 20px;
+  
+  
+}
+
+a{
+  color:red;
+}
+
+a:hover{
+  color:blue;
+}
+
+p{
+  text-indent: 32px;
+  font-weight: bold;
+}
+
+img{
+  border-left: 5px solid gray;
+  border-right: 5px solid gray;
+  border-top: 5px solid gray;
+  border-bottom: 5px solid gray;
+}
+
+img:hover{
+  border-left: 5px solid pink;
+  border-right: 5px solid pink;
+  border-top: 5px solid pink;
+  border-bottom: 5px solid pink;
+}
+
+li{
+  font-size:14px;
+  line-height:1.5;
+  font-family:
+  "WenQuanYi Zen Hei",
+  "Helvetica",
+  "Arial",
+  sans-serif;
+}
+
+.text-decoration{
+  text-decoration: line-through;
+}

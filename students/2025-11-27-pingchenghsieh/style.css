@@ -1,0 +1,11 @@
+
+.container{
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+h1{
+    padding: 10px 0;
+    border-bottom: 1px solid #000;
+}

@@ -1,0 +1,14 @@
+body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* 垂直置中 */
+            align-items: center;     /* 水平置中 */
+            height: 100vh;           /* 讓內容滿版置中 */
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f7f7f7; /* 可自行調整背景顏色 */
+        }
+img {
+            margin-top: 20px;
+        }
