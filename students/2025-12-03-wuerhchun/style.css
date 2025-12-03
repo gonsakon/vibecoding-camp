@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #EFE9E2; /* 溫暖奶油背景 */
+}
+
+img {
+    display: block;
+    width: 300px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #B89B7B; /* 杏橘框 */
+    margin: 1.5rem auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #B89B7B;  /* 活力莓果粉 */
+    letter-spacing: 1px;
+}
+
+p {
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: #2A2A2A;  /* 易讀深灰 */
+}
