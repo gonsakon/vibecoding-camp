@@ -1,0 +1,43 @@
+h1{
+    color: brown;
+    text-align: left;
+    text-indent: 26px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 24px;
+}
+p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    margin-left: 30px;
+}
+img{
+    display: block;
+    margin-left: 30px;
+    width: 20%;
+}
+ol{
+    font-family: 'Lucida Console', 'Courier New', monospace;
+    font-size: 18px;
+    margin-left: 50px;
+}
+a{
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    margin-left: 30px;
+    text-decoration: none;
+    color: blue;
+}
+a:hover {
+    text-decoration: underline;
+    color: darkblue;
+}
+body {
+    background-color: #f0f8ff;
+    margin: 20px;
+}
+h2 {
+    color: #2e8b57;
+    font-family: 'Georgia', serif;
+    font-size: 22px;
+    margin-left: 30px;
+}
