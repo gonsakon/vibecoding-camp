@@ -19,7 +19,7 @@ body {
   padding: 2.5rem 1.5rem;
 }
 
-/* 這裡專門控制 h1 顏色：金色 */
+/* 這裡專門控制 h1 顏色： 金色 */
 .site-title {
   margin: 0 0 0.6rem;
   font-size: clamp(2rem, 4vw, 2.8rem);
