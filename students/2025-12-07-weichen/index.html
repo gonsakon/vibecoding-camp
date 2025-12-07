@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Character & Brick Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Minecraft Character & Brick Generator</h1>
+        <div class="instructions">
+            <p>HI, I am Steve, just a Minecraft character, from  student_ZHU_WEI_CHENG's  simple homework</p>
+            <p>I love building something, just like coder and bee. Click anywhere to create brick cubes!</p>
+        </div>
+        <div class="canvas-container">
+            <canvas id="gameCanvas" width="800" height="600"></canvas>
+        </div>
+        <div class="controls">
+            <button id="clearBtn">Clear All Bricks</button>
+            <button id="resetBtn">Reset Scene</button>
+            <div class="size-control">
+                <label for="sizeSlider">Brick Size: <span id="sizeValue">85</span></label>
+                <input type="range" id="sizeSlider" min="30" max="150" value="85">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
